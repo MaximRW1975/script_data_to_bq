@@ -1,0 +1,9 @@
+!pip install pandas-gbq
+from google.oauth2 import service_account
+
+credentials = service_account.Credentials.from_service_account_file('path')  # сюда вставляем путь до ключа bigquery
+
+df.to_gbq('Dataset.table',  # здесь указываем Датасет.Название_таблицы, если надо динамичное название таблицы, например дата в конце, то указываем table_{переменная даты}
+          project_id=project_id,  # указываем id проекта в bq
+          if_exists='replace'  # что делаем если таблица уже есть
+          )
