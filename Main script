@@ -1,5 +1,6 @@
 !pip install pandas-gbq
 from google.oauth2 import service_account
+import pandas as pd
 
 credentials = service_account.Credentials.from_service_account_file('path')  # сюда вставляем путь до ключа bigquery
 
